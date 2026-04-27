@@ -1,1 +1,0 @@
-*Os futuros exercícios estão por vim...*

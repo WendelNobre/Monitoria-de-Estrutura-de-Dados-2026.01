@@ -1,4 +1,4 @@
-#include "view.h"
+#include "suasfuncoes.c"
 
 Lista* criarLista(){
     Lista *li = malloc(sizeof(Lista));
@@ -17,11 +17,6 @@ void inserirInicio(Lista* li, int valor){
     *li = novo;
 
     return;
-}
-
-//Crie a função aqui:
-void inserirPelaPosicao(/*Lembre-se de colocar os parâmetros*/){
-    //{..}
 }
 
 void removerPelaPosicao(Lista* li, int posicao){

@@ -9,6 +9,10 @@ int main(){
     inserirInicio(li,2);
     inserirInicio(li,1);
 
+    // Experimente inserir dados diferentes
+
+    // Insira as funções aqui!
+
     imprimirLista(li);
 
     free(li);

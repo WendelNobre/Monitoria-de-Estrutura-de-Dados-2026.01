@@ -1,128 +1,128 @@
-// Inclui o arquivo suasfuncoes.c, que contém as funções a serem implementadas
+// Adiciona o arquivo com as funções que você vai fazer
 #include "suasfuncoes.c"
 
-// Define a função criarLista, que cria uma nova lista encadeada vazia
+// Faz uma função para criar uma lista nova e vazia
 Lista* criarLista(){
-    // Aloca memória para um ponteiro de Lista (ponteiro para ponteiro de No)
+    // Reserva um espaço na memória para guardar a lista
     Lista *li = malloc(sizeof(Lista));
-    // Se a alocação foi bem-sucedida, inicializa a lista como NULL (vazia)
+    // Se conseguiu reservar, deixa a lista vazia
     if(li != NULL) *li = NULL;
-    // Retorna o ponteiro para a lista criada
+    // Devolve a lista criada
     return li;
 }
 
-// Define a função inserirInicio, que insere um valor no início da lista
+// Faz uma função para adicionar um número no começo da lista
 void inserirInicio(Lista* li, int valor){
-    // Verifica se a lista é inválida (ponteiro nulo), se sim, retorna sem fazer nada
+    // Se a lista não existe, para aqui
     if(li == NULL) return;
 
-    // Aloca memória para um novo nó
+    // Reserva espaço para um novo pedaço da lista
     No* novo = malloc(sizeof(No));
-    // Define o valor do novo nó
+    // Coloca o número no novo pedaço
     novo->valor = valor;
 
-    // Faz o próximo do novo nó apontar para o atual início da lista
+    // Liga o novo pedaço ao começo da lista antiga
     novo->prox = *li;
 
-    // Atualiza o início da lista para o novo nó
+    // Agora o começo da lista é o novo pedaço
     *li = novo;
 
-    // Retorna da função
+    // Termina a função
     return;
 }
 
-// Define a função removerPelaPosicao, que remove um nó em uma posição específica
+// Faz uma função para tirar um pedaço da lista em um lugar específico
 void removerPelaPosicao(Lista* li, int posicao){
-    // Verifica se a lista é inválida, vazia ou posição inválida (<=0), se sim, retorna
+    // Se a lista não existe, está vazia ou o lugar é errado, para aqui
     if(li == NULL || *li == NULL || posicao <= 0) return;
 
-    // Se a posição é 1, remove o primeiro elemento
+    // Se o lugar é o primeiro
     if(posicao == 1){
-        // Ponteiro para o nó a ser removido (o primeiro)
+        // Pega o primeiro pedaço para tirar
         No* remover = *li;
-        // Atualiza o início da lista para o próximo nó
+        // O começo agora é o próximo pedaço
         *li = remover->prox;
-        // Libera a memória do nó removido
+        // Libera o espaço do pedaço tirado
         free(remover);
-        // Retorna da função
+        // Termina a função
         return;
     }
 
-    // Ponteiro auxiliar para percorrer a lista, começando do início
+    // Começa do começo da lista
     No* aux = *li;
-    // Contador para acompanhar a posição atual
+    // Conta os lugares
     int cont = 1;
 
-    // Percorre a lista até encontrar o nó anterior ao que será removido
+    // Anda pela lista até chegar perto do lugar certo
     while(aux->prox != NULL && cont < posicao - 1){
-        // Avança para o próximo nó
+        // Vai para o próximo
         aux = aux->prox;
-        // Incrementa o contador
+        // Conta mais um
         cont++;
     }
 
-    // Se o próximo nó é NULL, significa que a posição é inválida, retorna
+    // Se não achou o lugar, para aqui
     if(aux->prox == NULL) return;
 
-    // Ponteiro para o nó a ser removido (o próximo do auxiliar)
+    // Pega o pedaço para tirar
     No* remover = aux->prox;
-    // Atualiza o próximo do auxiliar para pular o nó removido
+    // Liga o pedaço anterior ao próximo
     aux->prox = remover->prox;
-    // Libera a memória do nó removido
+    // Libera o espaço do pedaço tirado
     free(remover);
 }
 
-// Define a função tamanhoLista, que retorna o número de elementos na lista
+// Faz uma função para contar quantos pedaços há na lista
 int tamanhoLista(Lista* li){
-    // Se a lista é inválida, retorna 0
+    // Se a lista não existe, diz que tem 0
     if(li == NULL) return 0;
 
-    // Ponteiro auxiliar para percorrer a lista, começando do início
+    // Começa do começo da lista
     No* aux = *li;
 
-    // Contador para contar os elementos
+    // Começa a contar do zero
     int cont = 0;
 
-    // Percorre a lista até o final
+    // Anda por toda a lista
     while(aux != NULL){
-        // Incrementa o contador
+        // Conta mais um
         cont++;
-        // Avança para o próximo nó
+        // Vai para o próximo
         aux = aux->prox;
     }
 
-    // Retorna o contador (tamanho da lista)
+    // Devolve quantos contou
     return cont;
 }
 
-// Define a função imprimirLista, que imprime os elementos da lista
+// Faz uma função para mostrar todos os números da lista
 void imprimirLista(Lista* li){
-    // Verifica se a lista é inválida
+    // Se a lista não existe
     if (li == NULL){
-        // Imprime mensagem de lista inválida
+        // Mostra mensagem de erro
         printf("Lista inválida");
-        // Retorna da função
+        // Termina a função
         return;
-    // Verifica se a lista está vazia
+    // Se a lista está vazia
     } else if (*li == NULL) {
-        // Imprime mensagem de lista vazia
+        // Mostra que está vazia
         printf("Lista vazia");
-        // Retorna da função
+        // Termina a função
         return;
     } 
 
-    // Ponteiro auxiliar para percorrer a lista, começando do início
+    // Começa do começo da lista
     No* aux = *li;
 
-    // Percorre a lista enquanto não chegar ao final
+    // Anda por toda a lista
     while(aux != NULL){
-        // Imprime o valor do nó atual seguido de " ->"
+        // Mostra o número e uma seta
         printf(" %d ->",aux->valor);
-        // Avança para o próximo nó
+        // Vai para o próximo
         aux = aux->prox;
     }
 
-    // Imprime " NULL\n" para indicar o fim da lista
+    // Mostra o fim da lista
     printf(" NULL\n");
 
 }

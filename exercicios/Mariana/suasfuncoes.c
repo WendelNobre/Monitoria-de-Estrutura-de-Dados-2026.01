@@ -1,16 +1,16 @@
-// Inclui o arquivo view.h, que contém as definições de tipos e protótipos de funções
+// Adiciona o arquivo com os tipos e funções
 #include "view.h"
 
-// Comentário indicando a outra função a ser implementada
+// Esta é a outra função
 // A outra função
-// Define a função inserirPelaPosicao, que insere um valor em uma posição específica da lista
+// Faz uma função para adicionar um número em um lugar específico da lista
 void inserirPelaPosicao(/*Lembre-se de colocar os parâmetros*/){
-    // Corpo da função vazio, a ser implementado
+    // Você vai escrever o código aqui
     //{..}
 }
 
-// Define a função ordernarCrescente, que ordena a lista em ordem crescente
+// Faz uma função para organizar a lista do menor para o maior
 void ordernarCrescente(/*Lembre-se de colocar os parâmetros*/){
-    // Corpo da função vazio, a ser implementado
+    // Você vai escrever o código aqui
     // {..}
 }

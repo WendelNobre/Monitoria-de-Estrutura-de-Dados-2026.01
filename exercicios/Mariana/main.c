@@ -1,32 +1,32 @@
-// Inclui o arquivo controller.c, que contém as implementações das funções da lista
+// Adiciona o arquivo com as funções da lista
 #include "controller.c"
 
-// Define a função principal do programa
+// Começa o programa aqui
 int main(){
-    // Cria uma nova lista encadeada vazia e armazena o ponteiro em li
+    // Faz uma lista nova
     Lista* li = criarLista();
 
-    // Insere o valor 4 no início da lista
+    // Adiciona o número 4 no começo
     inserirInicio(li,4);
-    // Insere o valor 3 no início da lista (agora a lista é 3 -> 4)
+    // Adiciona o número 3 no começo (agora é 3,4)
     inserirInicio(li,3);
-    // Insere o valor 2 no início da lista (agora a lista é 2 -> 3 -> 4)
+    // Adiciona o número 2 no começo (agora é 2,3,4)
     inserirInicio(li,2);
-    // Insere o valor 1 no início da lista (agora a lista é 1 -> 2 -> 3 -> 4)
+    // Adiciona o número 1 no começo (agora é 1,2,3,4)
     inserirInicio(li,1);
 
-    // Comentário sugerindo experimentar inserir dados diferentes
+    // Tente mudar os números aqui
     // Experimente inserir dados diferentes
 
-    // Comentário indicando onde inserir as funções a serem implementadas
+    // Coloque suas funções novas aqui
     // Insira as funções aqui!
 
-    // Imprime os elementos da lista
+    // Mostra a lista na tela
     imprimirLista(li);
 
-    // Libera a memória alocada para o ponteiro da lista (não libera os nós, apenas o ponteiro)
+    // Libera o espaço da lista
     free(li);
 
-    // Retorna 0, indicando que o programa terminou com sucesso
+    // Termina o programa
     return 0;
 }
